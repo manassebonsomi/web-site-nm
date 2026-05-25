@@ -100,8 +100,13 @@ body::-webkit-scrollbar-thumb{
 }
 
 .header.scrolled .navbar a{
-  color:#000000;
+  color:#ffffff;
 }
+
+.header.scrolled .menu-btn{
+  color:#ffffff;
+}
+
 
 .header.scrolled .logo h2{
   color:#fff;
@@ -221,11 +226,11 @@ body::-webkit-scrollbar-thumb{
   color:#ddd;
   margin-bottom:35px;
 }
-
+*/
 .hero-buttons{
   display:flex;
   gap:20px;
-} */
+}
 
 /* HERO SLIDER */
 
@@ -490,6 +495,11 @@ body::-webkit-scrollbar-thumb{
 .stat-box h2{
   color:#003399;
   margin-bottom:10px;
+}
+
+.stat-box:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
 }
 
 /* ACTIONS */
@@ -864,7 +874,7 @@ body::-webkit-scrollbar-thumb{
 
 .socials a:hover{
   transform:translateY(-5px);
-  background:#ffcc00;
+  background:#000000;
   color:#000;
 }
 
@@ -945,6 +955,97 @@ body::-webkit-scrollbar-thumb{
 
 }
 
+/* =========================
+   FOOTER NEWSLETTER
+========================= */
+
+.footer-newsletter{
+  margin-top:50px;
+  margin-bottom: 20px;
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:25px;
+  padding:40px;
+  backdrop-filter:blur(10px);
+}
+
+.newsletter-content{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:30px;
+  flex-wrap:wrap;
+}
+
+.newsletter-texts h2{
+  font-size:32px;
+  margin-bottom:10px;
+  color:#fff;
+}
+
+.newsletter-texts p{
+  color:#ddd;
+  line-height:1.7;
+}
+
+.newsletter-form{
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.newsletter-form input{
+  width:320px;
+  padding:16px 20px;
+  border:none;
+  outline:none;
+  border-radius:50px;
+  background:#fff;
+  font-size:15px;
+}
+
+.newsletter-form button{
+  padding:16px 30px;
+  border:none;
+  border-radius:50px;
+  background:#ffcc00;
+  color:#001d66;
+  font-weight:700;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.newsletter-form button:hover{
+  background:#fff;
+  transform:translateY(-3px);
+}
+
+.newsletter-message{
+  margin-top:20px;
+  color:#ffcc00;
+  font-weight:500;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+  .newsletter-content{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .newsletter-form{
+    width:100%;
+    flex-direction:column;
+  }
+
+  .newsletter-form input{
+    width:100%;
+  }
+
+}
+
 
 
 
@@ -965,9 +1066,17 @@ body::-webkit-scrollbar-thumb{
     flex-direction:column;
   }
 
+  .header.scrolled .navbar a{
+  color:#000000;
+  }
+
 }
 
 @media(max-width:768px){
+
+  .header.scrolled .navbar a{
+    color:#000000;
+  }
 
    .navbar{
     position: fixed;
@@ -977,7 +1086,7 @@ body::-webkit-scrollbar-thumb{
     height: auto; 
     max-height: 400px;
     overflow-y: auto;
-    background: #fff;
+    background: #ffffff;
     display: flex;
     flex-direction: column;
     padding: 20px;

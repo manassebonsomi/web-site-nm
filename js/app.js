@@ -419,6 +419,48 @@ const lightboxImg = document.getElementById("lightbox-img");
     });
   });
 
+
+/* =========================
+   NEWSLETTER SYSTEM
+========================= */
+
+const newsletterForm = document.getElementById("newsletter-form");
+
+if(newsletterForm){
+
+  newsletterForm.addEventListener("submit", (e) => {
+
+    e.preventDefault();
+
+    const emailInput = document.getElementById("newsletter-email");
+
+    const message = document.getElementById("newsletter-message");
+
+    const email = emailInput.value.trim();
+
+    if(email === "") return;
+
+    // SAVE LOCAL STORAGE
+    let subscribers = JSON.parse(localStorage.getItem("subscribers")) || [];
+
+    subscribers.push(email);
+
+    localStorage.setItem("subscribers", JSON.stringify(subscribers));
+
+    message.innerHTML = `
+      Merci pour votre abonnement !
+    `;
+
+    emailInput.value = "";
+
+    setTimeout(() => {
+      message.innerHTML = "";
+    }, 4000);
+
+  });
+
+}
+
 ScrollReveal().reveal('.gal-item', {
   delay:200,
   interval:100,
