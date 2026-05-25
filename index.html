@@ -17,9 +17,26 @@
 <body>
     <div class="progress-bar"></div>
 
-    <!-- LOADER -->
-    <div class="loader">
-    <div class="spinner"></div>
+        <!-- LOADER PREMIUM -->
+    <div class="loader" id="loader">
+
+      <div class="loader-content">
+
+        <div class="emblem-ring"></div>
+
+        <div class="loader-center">
+          <h2>NORBER TINE</h2>
+          <span>MATANDA</span>
+        </div>
+
+        <div class="loader-bar">
+          <div class="loader-progress"></div>
+        </div>
+
+        <p>Chargement du site officiel...</p>
+
+      </div>
+
     </div>
 
   <!-- HEADER -->
@@ -504,32 +521,67 @@
 
     <section class="gallery">
 
-    <div class="section-title">
+      <div class="section-title">
         <h2>Galerie</h2>
-        <p>Moments forts et activités</p>
-    </div>
+        <p>Moments forts et activités officielles</p>
+      </div>
 
-    <div class="gallery-container">
+      <!-- FILTERS -->
 
-        <div class="gallery-item">
-        <img src="images/norbertine.jpg" alt="">
+      <div class="gallery-filters">
+
+        <button class="filter active" data-filter="all">
+          Tout
+        </button>
+
+        <button class="filter" data-filter="social">
+          Social
+        </button>
+
+        <button class="filter" data-filter="meeting">
+          Réunions
+        </button>
+
+        <button class="filter" data-filter="community">
+          Communauté
+        </button>
+
+      </div>
+
+      <!-- GALLERY GRID -->
+
+      <div class="gallery-container">
+
+        <!-- ITEM -->
+
+        <div class="gal-item social">
+          <img src="images/norbertine.jpg" alt="">
         </div>
 
-        <div class="gallery-item">
-        <img src="images/norbertine.jpg" alt="">
+        <div class="gal-item meeting">
+          <img src="images/about.jpg" alt="">
         </div>
 
-        <div class="gallery-item">
-        <img src="images/norbertine.jpg" alt="">
+        <div class="gal-item community">
+          <img src="images/norbertine.jpg" alt="">
         </div>
 
-        <div class="gallery-item">
-        <img src="images/norbertine.jpg" alt="">
+        <div class="gal-item social">
+          <img src="images/about.jpg" alt="">
         </div>
 
-    </div>
+        <div class="gal-item meeting">
+          <img src="images/norbertine.jpg" alt="">
+        </div>
+
+        <div class="gal-item community">
+          <img src="images/about.jpg" alt="">
+        </div>
+
+      </div>
 
     </section>
+
 
   <!-- FOOTER -->
   <!-- <footer class="footer">
@@ -664,11 +716,36 @@
     <i class="fa-solid fa-arrow-up"></i>
     </button>
 
-    <!-- Scroll Reveal -->
+
+ <!-- LIGHTBOX -->
+
+    <div class="lightbox" id="lightbox">
+
+      <span class="close">
+        &times;
+      </span>
+
+      <img class="lightbox-img" id="lightbox-img">
+
+      <!-- NAVIGATION -->
+
+      <button class="lightbox-prev">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+
+      <button class="lightbox-next">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+
+    </div>
+   <!-- Scroll Reveal -->
     <script src="https://unpkg.com/scrollreveal"></script>
     <!-- JS -->
     <script src="js/app.js"></script>
+    <script src="js/gsap.js"></script>
     <script src="js/api.js"></script>
-</div>
+    <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </body>
 </html>

@@ -45,11 +45,11 @@ window.addEventListener("scroll", () => {
 ========================= */
 
 window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
 
-  if(loader){
+  setTimeout(() => {
     loader.classList.add("hide");
-  }
-
+  }, 2500);
 });
 
 /* =========================
@@ -370,54 +370,122 @@ filters.forEach(btn => {
 });
 
 
-// LIGHTBOX
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightbox-img");
+/* =========================
+   PREMIUM LIGHTBOX
+========================= */
 
-  document.querySelectorAll(".gal-item img").forEach(img => {
+window.addEventListener("DOMContentLoaded", () => {
+
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+
+  const galleryImages = document.querySelectorAll(".gal-item img");
+
+  const closeBtn = document.querySelector(".close");
+
+  const lightboxprevBtn = document.querySelector(".lightbox-prev");
+  const lightboxnextBtn = document.querySelector(".lightbox-next");
+
+  let currentImage = 0;
+
+  // CHECK
+
+  if(
+    !lightbox ||
+    !lightboxImg ||
+    galleryImages.length === 0 ||
+    !closeBtn
+  ){
+    return;
+  }
+
+  /* SHOW IMAGE */
+
+  function showImage(index){
+
+    lightboxImg.src = galleryImages[index].src;
+
+  }
+
+  /* OPEN */
+
+  galleryImages.forEach((img, index) => {
+
     img.addEventListener("click", () => {
+
+      currentImage = index;
+
+      showImage(currentImage);
+
       lightbox.style.display = "flex";
-      lightboxImg.src = img.src;
+
+      document.body.style.overflow = "hidden";
+
     });
+
   });
 
-  document.querySelector(".lightbox .close").addEventListener("click", () => {
+  /* CLOSE */
+
+  closeBtn.addEventListener("click", () => {
+
     lightbox.style.display = "none";
+
+    document.body.style.overflow = "auto";
+
   });
+
+  /* CLOSE BACKGROUND */
 
   lightbox.addEventListener("click", (e) => {
+
     if(e.target === lightbox){
+
       lightbox.style.display = "none";
+
+      document.body.style.overflow = "auto";
+
     }
+
   });
 
-  const newsBtns = document.querySelectorAll(".news-btn");
-  const newsCards = document.querySelectorAll(".news-card");
+  /* NEXT */
 
-  newsBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
+  if(lightboxnextBtn){
 
-      newsBtns.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
+    lightboxnextBtn.addEventListener("click", () => {
 
-      const filter = btn.dataset.filter;
+      currentImage++;
 
-      newsCards.forEach(card => {
+      if(currentImage >= galleryImages.length){
+        currentImage = 0;
+      }
 
-        if(filter === "all"){
-          card.classList.remove("hide");
-        } else {
-          if(card.classList.contains(filter)){
-            card.classList.remove("hide");
-          } else {
-            card.classList.add("hide");
-          }
-        }
-
-      });
+      showImage(currentImage);
 
     });
-  });
+
+  }
+
+  /* PREV */
+
+  if(lightboxprevBtn){
+
+    lightboxprevBtn.addEventListener("click", () => {
+
+      currentImage--;
+
+      if(currentImage < 0){
+        currentImage = galleryImages.length - 1;
+      }
+
+      showImage(currentImage);
+
+    });
+
+  }
+
+});
 
 
 /* =========================
@@ -460,6 +528,7 @@ if(newsletterForm){
   });
 
 }
+
 
 ScrollReveal().reveal('.gal-item', {
   delay:200,
