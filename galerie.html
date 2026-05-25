@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Honorable Norbertine Matanda</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/galerie.css"/>
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="progress-bar"></div>
+
+    <!-- LOADER -->
+    <div class="loader">
+    <div class="spinner"></div>
+    </div>
+
+  <!-- HEADER -->
+  <header class="header">
+
+    <div class="logo">
+      <h2>NORBERTINE <span>MATANDA</span></h2>
+    </div>
+
+    <nav class="navbar" id="navbar">
+      <a href="index.html">Accueil</a>
+      <a href="biographie.html">Biographie</a>
+      <a href="realisations.html">Réalisations</a>
+      <a href="actualites.html">Actualités</a>
+      <a href="galerie.html">Galerie</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="menu-btn" id="menu-btn">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+
+  </header>
+
+    <!-- MAIN CONTACT SECTION -->
+        <!-- HERO GALERIE -->
+    <section class="gal-hero">
+    <div class="gal-overlay"></div>
+
+    <div class="gal-content">
+        <h1>Galerie</h1>
+        <p>Moments forts, activités et actions sur le terrain</p>
+    </div>
+    </section>
+
+        <!-- FILTER -->
+    <section class="filter-section">
+    <button class="filter active" data-filter="all">Tous</button>
+    <button class="filter" data-filter="social">Social</button>
+    <button class="filter" data-filter="terrain">Terrain</button>
+    <button class="filter" data-filter="event">Événements</button>
+    </section>
+
+    <!-- GALLERY GRID -->
+    <section class="gallery">
+
+    <div class="grid">
+
+        <!-- SOCIAL -->
+        <div class="gal-item social">
+        <img src="images/norbertine.jpg">
+        </div>
+
+        <div class="gal-item social">
+        <img src="images/norbertine.jpg">
+        </div>
+
+        <!-- TERRAIN -->
+        <div class="gal-item terrain">
+        <img src="images/norbertine.jpg">
+        </div>
+
+        <div class="gal-item terrain">
+        <img src="images/norbertine.jpg">
+        </div>
+
+        <!-- EVENT -->
+        <div class="gal-item event">
+        <img src="images/about.jpg">
+        </div>
+
+        <div class="gal-item event">
+        <img src="images/about.jpg">
+        </div>
+
+    </div>
+
+    </section>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+    <span class="close">&times;</span>
+    <img id="lightbox-img">
+    </div>
+
+    <!-- FOOTER -->
+  <footer class="footer">
+
+    <h2>Norbertine Matanda</h2>
+
+    <p>
+      Au service du peuple et du développement du Congo.
+    </p>
+
+    <div class="socials">
+
+      <a href="#">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+
+      <a href="#">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+
+      <a href="#">
+        <i class="fab fa-instagram"></i>
+      </a>
+
+    </div>
+
+    <span>
+      © 2026 Tous droits réservés
+    </span>
+
+  </footer>
+
+    <!-- WHATSAPP FLOAT -->
+    <a href="https://wa.me/243977695801" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i> </a>
+    
+    <!-- SCROLL TOP -->
+    <button class="scroll-top" id="scroll-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Scroll Reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- JS -->
+    <script src="js/app.js"></script>
+    <script src="js/api.js"></script>
+</div>
+</body>
+</html>
