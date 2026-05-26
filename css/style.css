@@ -40,7 +40,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 /* =========================
-   LOADER PRESIDENTIEL PREMIUM
+   LOADER SVG PRESIDENTIEL
 ========================= */
 
 .loader{
@@ -54,14 +54,13 @@ body::-webkit-scrollbar-thumb{
   overflow: hidden;
 }
 
-/* animation de disparition */
+/* disparition */
 .loader.hide{
   opacity: 0;
   visibility: hidden;
   transition: 0.8s ease;
 }
 
-/* contenu */
 .loader-content{
   text-align: center;
   color: #fff;
@@ -69,41 +68,64 @@ body::-webkit-scrollbar-thumb{
   z-index: 2;
 }
 
-/* anneau tournant style institutionnel */
-.emblem-ring{
-  width: 140px;
-  height: 140px;
-  margin: 0 auto 25px;
-  border-radius: 50%;
-  border: 3px solid rgba(255,255,255,0.1);
-  border-top: 3px solid #ffcc00;
-  border-right: 3px solid rgba(255,255,255,0.4);
-  animation: spin 1.5s linear infinite;
-  box-shadow: 0 0 40px rgba(255,204,0,0.2);
+/* =========================
+   SVG LOGO
+========================= */
+
+.svg-logo{
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 20px;
+  filter: drop-shadow(0 0 20px rgba(255,204,0,0.4));
 }
 
-/* centre texte */
-.loader-center h2{
+/* cercle fond */
+.circle-bg{
+  fill: none;
+  stroke: rgba(255,255,255,0.1);
+  stroke-width: 6;
+}
+
+/* cercle animé */
+.circle-anim{
+  fill: none;
+  stroke: #ffcc00;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: drawCircle 2.5s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* étoile centrale */
+.star{
+  fill: rgba(255,255,255,0.9);
+  transform-origin: center;
+  animation: pulseStar 2s ease-in-out infinite;
+}
+
+/* texte */
+.loader-content h2{
   font-size: 26px;
   letter-spacing: 4px;
   font-weight: 800;
-  color: #fff;
 }
 
-.loader-center span{
-  display: block;
+.loader-content span{
+  display:block;
   font-size: 14px;
   letter-spacing: 8px;
-  color: #ffcc00;
-  margin-top: 5px;
+  color:#ffcc00;
+  margin-top:5px;
 }
 
-/* barre de progression */
+/* barre */
 .loader-bar{
   width: 220px;
   height: 3px;
   background: rgba(255,255,255,0.1);
-  margin: 25px auto 15px;
+  margin: 25px auto 10px;
   border-radius: 50px;
   overflow: hidden;
 }
@@ -115,40 +137,61 @@ body::-webkit-scrollbar-thumb{
   animation: loadBar 2.5s ease forwards;
 }
 
-/* texte */
+/* texte bas */
 .loader-content p{
-  font-size: 13px;
+  font-size: 12px;
   color: rgba(255,255,255,0.7);
-  letter-spacing: 1px;
 }
 
-/* animations */
-@keyframes spin{
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes drawCircle{
+  0%{
+    stroke-dashoffset: 500;
+    transform: rotate(0deg);
+  }
+  50%{
+    stroke-dashoffset: 200;
+  }
   100%{
+    stroke-dashoffset: 500;
     transform: rotate(360deg);
   }
 }
 
-@keyframes loadBar{
-  0%{width: 0%;}
-  100%{width: 100%;}
+@keyframes pulseStar{
+  0%,100%{
+    transform: scale(1);
+    opacity: 1;
+  }
+  50%{
+    transform: scale(0.85);
+    opacity: 0.7;
+  }
 }
 
-/* effet lumière flottante */
+@keyframes loadBar{
+  from{ width:0%; }
+  to{ width:100%; }
+}
+
+/* glow background */
 .loader::before{
   content:"";
   position:absolute;
-  width: 500px;
-  height: 500px;
-  background: rgba(255,204,0,0.08);
-  border-radius: 50%;
-  filter: blur(80px);
+  width:600px;
+  height:600px;
+  background:rgba(255,204,0,0.08);
+  border-radius:50%;
+  filter:blur(90px);
   animation: floatGlow 6s infinite alternate;
 }
 
 @keyframes floatGlow{
-  from{ transform: translate(-20%, -20%); }
-  to{ transform: translate(20%, 20%); }
+  from{transform:translate(-20%,-20%);}
+  to{transform:translate(20%,20%);}
 }
 
 .spinner{
@@ -1167,7 +1210,7 @@ section{
 }
 
 .footer::before{
-  content:"";
+  /* content:""; */
   position:absolute;
   top:-50%;
   left:-50%;

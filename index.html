@@ -17,18 +17,34 @@
 <body>
     <div class="progress-bar"></div>
 
-        <!-- LOADER PREMIUM -->
+      <!-- LOADER PREMIUM SVG -->
     <div class="loader" id="loader">
 
       <div class="loader-content">
 
-        <div class="emblem-ring"></div>
+        <!-- LOGO SVG -->
+        <div class="svg-logo">
+          <svg viewBox="0 0 200 200" class="logo-svg">
 
-        <div class="loader-center">
-          <h2>NORBER TINE</h2>
-          <span>MATANDA</span>
+            <!-- cercle externe -->
+            <circle class="circle-bg" cx="100" cy="100" r="80"/>
+
+            <!-- cercle animé -->
+            <circle class="circle-anim" cx="100" cy="100" r="80"/>
+
+            <!-- étoile / symbole central -->
+            <path class="star"
+              d="M100 40 L112 78 L152 78 L120 100 L132 138 L100 116 L68 138 L80 100 L48 78 L88 78 Z"
+            />
+
+          </svg>
         </div>
 
+        <!-- TEXTE -->
+        <h2>NORBERTINE</h2>
+        <span>MATANDA</span>
+
+        <!-- BARRE -->
         <div class="loader-bar">
           <div class="loader-progress"></div>
         </div>
