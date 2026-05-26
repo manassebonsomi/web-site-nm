@@ -57,3 +57,23 @@ gsap.to(".slide img", {
     scrub: true
   }
 });
+
+gsap.from(".real-hero-content h1", {
+  y: 50,
+  opacity: 0,
+  duration: 1
+});
+
+gsap.from(".stat", {
+  scrollTrigger: ".real-stats",
+  y: 60,
+  opacity: 0,
+  stagger: 0.2
+});
+
+gsap.from(".real-card", {
+  scrollTrigger: ".real-grid",
+  scale: 0.8,
+  opacity: 0,
+  stagger: 0.2
+});
