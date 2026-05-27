@@ -197,10 +197,17 @@
   position:relative;
 }
 
+.real-timeline h2{
+  font-size:30px;
+  margin-bottom:50px;
+  color:#003399;
+  text-align:center;
+}
+
 .timeline{
+  padding:100px 8%;
+  background:#fff;
   position:relative;
-  max-width:900px;
-  margin:auto;
 }
 
 /* ligne centrale */
