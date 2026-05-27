@@ -1,0 +1,33 @@
+Header always set X-Content-Type-Options "nosniff"
+Header always set X-Frame-Options "SAMEORIGIN"
+Header always set X-XSS-Protection "1; mode=block"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Permissions-Policy "geolocation=()"
+
+
+Header set Content-Security-Policy "default-src 'self'; img-src 'self' data: https:; script-src 'self' https://cdnjs.cloudflare.com https://unpkg.com;"
+
+
+
+<FilesMatch "^(\.env|\.git|\.js|\.css\.gitignore|\.htaccess|\.htpasswd|\.DS_Store|composer\.(json|lock)|package\.(json|lock))$">
+Order allow,deny
+Deny from all
+</FilesMatch>
+
+Options -Indexes
+
+<FilesMatch "\.(env|log|json|md)$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+<FilesMatch "\.(js|css)$">
+  Header set Cache-Control "public, max-age=31536000"
+</FilesMatch>
+
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+
+X-Frame-Options: DENY

@@ -323,3 +323,109 @@ ScrollReveal().reveal('.news-card', {
   origin:'bottom',
   duration:1200
 });
+
+
+/* document.getElementById("whatsappBtn").addEventListener("click", function (e) {
+  e.preventDefault();
+
+  const part1 = "243";
+  const part2 = "977";
+  const part3 = "695801";
+
+  const number = part1 + part2 + part3;
+
+  const url = "https://wa.me/" + number;
+  window.open(url, "_blank");
+}); */
+
+document.getElementById("whatsappBtn").addEventListener("click", function (e) {
+  e.preventDefault();
+
+  setTimeout(() => {
+    const number = ["243","977","695801"].join("");
+    window.open("https://wa.me/" + number, "_blank");
+  }, 300);
+});
+
+document.getElementById("emailBtn").addEventListener("click", function (e) {
+  e.preventDefault();
+
+  const user = "contact";
+  const domain = "norbertinematanda.cd";
+
+  window.location.href = "mailto:" + user + "@" + domain;
+});
+
+document.addEventListener("contextmenu", e => {
+  e.preventDefault();
+});
+
+// BLOQUER CERTAINES TOUCHES DEVELOPPEUR
+document.addEventListener("keydown", function (e) {
+
+  // CTRL + U
+  if (e.ctrlKey && e.key.toLowerCase() === "u") {
+    e.preventDefault();
+  }
+
+  // CTRL + SHIFT + I
+  if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "i") {
+    e.preventDefault();
+  }
+
+  // CTRL + SHIFT + J
+  if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "j") {
+    e.preventDefault();
+  }
+
+  // CTRL + SHIFT + C
+  if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "c") {
+    e.preventDefault();
+  }
+
+  // F12
+  if (e.key === "F12") {
+    e.preventDefault();
+  }
+
+});
+
+
+setInterval(() => {
+
+  const devtoolsOpen =
+    window.outerWidth - window.innerWidth > 160 ||
+    window.outerHeight - window.innerHeight > 160;
+
+  if (devtoolsOpen) {
+
+    document.body.innerHTML = `
+      <div style="
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background:#000;
+        color:#fff;
+        font-size:30px;
+        font-family:sans-serif;
+      ">
+        Inspection non autorisée
+      </div>
+    `;
+
+  }
+
+}, 1000);
+
+
+/* setInterval(() => {
+
+  const devtools =
+    window.outerWidth - window.innerWidth > 160;
+
+  if (devtools) {
+    window.location.href = "about:blank";
+  }
+
+}, 1000); */
