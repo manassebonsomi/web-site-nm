@@ -253,7 +253,110 @@ body::-webkit-scrollbar-thumb{
   color:#ffcc00;
 }
 
-.logo h2{
+
+
+/* =========================
+   LOGO HEADER PREMIUM
+========================= */
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.logo-img{
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  overflow:hidden;
+  position:relative;
+  flex-shrink:0;
+
+  animation:logoFloat 3s ease-in-out infinite;
+}
+
+.logo-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:50%;
+}
+
+/* contour lumineux */
+
+.logo-img::before{
+  content:'';
+  position:absolute;
+  inset:-3px;
+  border-radius:50%;
+  background:linear-gradient(
+    45deg,
+    #003399,
+    #ffcc00,
+    #003399
+  );
+  z-index:-1;
+
+  animation:rotateLogo 6s linear infinite;
+}
+
+/* texte */
+
+.logo-text h2{
+  color:#003399;
+  font-size:22px;
+  font-weight:800;
+  margin:0;
+  line-height:1.1;
+}
+
+.logo-text span{
+  color:#d60000;
+}
+
+/* animation flottante */
+
+@keyframes logoFloat{
+
+  0%,100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-5px);
+  }
+
+}
+
+/* rotation contour */
+
+@keyframes rotateLogo{
+
+  from{
+    transform:rotate(0deg);
+  }
+
+  to{
+    transform:rotate(360deg);
+  }
+
+}
+
+@media(max-width:768px){
+
+  .logo-img{
+    width:45px;
+    height:45px;
+  }
+
+  .logo-text h2{
+    font-size:16px;
+  }
+
+}
+
+/* .logo h2{
   color:#003399;
   font-size:28px;
   font-weight:800;
@@ -261,7 +364,7 @@ body::-webkit-scrollbar-thumb{
 
 .logo span{
   color:#d60000;
-}
+} */
 
 .navbar{
   display:flex;
