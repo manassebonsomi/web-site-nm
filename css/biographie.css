@@ -116,7 +116,7 @@
 /* HERO BIO */
 .bio-hero{
   height: 70vh;
-  background: url("../images/about.jpg") center/cover no-repeat;
+  background: url("../images/norbertine-matanda-developpement-social.jpg") center/cover no-repeat;
   position: relative;
   display:flex;
   justify-content:center;
@@ -339,6 +339,8 @@
 .bio-vision h2{
   font-size:42px;
   margin-bottom:60px;
+  text-align:center;
+  justify-content:center;
 }
 
 .vision-grid{

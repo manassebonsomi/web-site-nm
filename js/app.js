@@ -329,8 +329,8 @@ ScrollReveal().reveal('.news-card', {
   e.preventDefault();
 
   const part1 = "243";
-  const part2 = "977";
-  const part3 = "695801";
+  const part2 = "826";
+  const part3 = "844992";
 
   const number = part1 + part2 + part3;
 
@@ -342,7 +342,16 @@ document.getElementById("whatsappBtn").addEventListener("click", function (e) {
   e.preventDefault();
 
   setTimeout(() => {
-    const number = ["243","977","695801"].join("");
+    const number = ["243","826","844992"].join("");
+    window.open("https://wa.me/" + number, "_blank");
+  }, 300);
+});
+
+document.getElementById("BtnWhatsapp").addEventListener("click", function (e) {
+  e.preventDefault();
+
+  setTimeout(() => {
+    const number = ["243","826","844992"].join("");
     window.open("https://wa.me/" + number, "_blank");
   }, 300);
 });
@@ -356,7 +365,7 @@ document.getElementById("emailBtn").addEventListener("click", function (e) {
   window.location.href = "mailto:" + user + "@" + domain;
 });
 
-document.addEventListener("contextmenu", e => {
+/* document.addEventListener("contextmenu", e => {
   e.preventDefault();
 });
 
@@ -416,7 +425,7 @@ setInterval(() => {
 
   }
 
-}, 1000);
+}, 1000); */
 
 
 /* setInterval(() => {

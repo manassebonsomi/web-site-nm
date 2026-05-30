@@ -15,7 +15,7 @@
 .real-hero-bg{
   position:absolute;
   inset:0;
-  background:url("../images/about.jpg") center/cover no-repeat;
+  background:url("../images/norbertine-matanda-social (2).jpg") center/cover no-repeat;
   transform:scale(1.1);
   animation:zoomHero 15s infinite alternate ease-in-out;
 }
