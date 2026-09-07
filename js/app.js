@@ -120,57 +120,75 @@ scrollBtn.addEventListener("click", () => {
 
 });
 
+
+
 /* =========================
    COUNTER ANIMATION
 ========================= */
 
 function animateCounter(counter) {
-  const target = +counter.getAttribute("data-target");
-  let count = 0;
-  const speed = target / 120;
 
-  const update = () => {
-    count += speed;
+  const target = parseInt(counter.dataset.target);
+  let current = 0;
 
-    if (count < target) {
-      counter.textContent = Math.floor(count);
-      requestAnimationFrame(update);
-    } else {
-      counter.textContent = target.toLocaleString();
+  const increment = target / 100;
+
+  const updateCounter = () => {
+
+    current += increment;
+
+    if(current < target){
+
+      counter.innerText = Math.ceil(current).toLocaleString();
+
+      requestAnimationFrame(updateCounter);
+
+    }else{
+
+      counter.innerText = target.toLocaleString();
+
     }
+
   };
 
-  update();
+  updateCounter();
+
 }
 
-const counters = document.querySelectorAll(".counter");
+/* =========================
+   INTERSECTION OBSERVER
+========================= */
 
-counters.forEach(counter => {
-  animateCounter(counter);
-}); 
+const counterSection = document.querySelector(".about");
 
-/* const counterSection = document.querySelector(".about");
+if(counterSection){
 
-const observer = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
+  const observer = new IntersectionObserver((entries) => {
 
-      const counters = document.querySelectorAll(".counter");
+    entries.forEach(entry => {
 
-      counters.forEach(counter => {
-        animateCounter(counter);
-      });
+      if(entry.isIntersecting){
 
-      observer.disconnect(); // exécute une seule fois
-    }
+        document.querySelectorAll(".counter").forEach(counter => {
+
+          // Remise à zéro avant animation
+          counter.innerText = "0";
+
+          animateCounter(counter);
+
+        });
+
+      }
+
+    });
+
+  }, {
+    threshold: 0.5
   });
-}, {
-  threshold: 0.5
-});
 
-if (counterSection) {
   observer.observe(counterSection);
-} */
+
+}
 
 
 /* =========================
@@ -257,49 +275,6 @@ ScrollReveal().reveal('.bio-container, .timeline .item, .vision-card', {
   duration:1200
 });
 
-
-/* =========================
-   NEWSLETTER SYSTEM
-========================= */
-
-const newsletterForm = document.getElementById("newsletter-form");
-
-if(newsletterForm){
-
-  newsletterForm.addEventListener("submit", (e) => {
-
-    e.preventDefault();
-
-    const emailInput = document.getElementById("newsletter-email");
-
-    const message = document.getElementById("newsletter-message");
-
-    const email = emailInput.value.trim();
-
-    if(email === "") return;
-
-    // SAVE LOCAL STORAGE
-    let subscribers = JSON.parse(localStorage.getItem("subscribers")) || [];
-
-    subscribers.push(email);
-
-    localStorage.setItem("subscribers", JSON.stringify(subscribers));
-
-    message.innerHTML = `
-      Merci pour votre abonnement !
-    `;
-
-    emailInput.value = "";
-
-    setTimeout(() => {
-      message.innerHTML = "";
-    }, 4000);
-
-  });
-
-}
-
-
 ScrollReveal().reveal('.gal-item', {
   delay:200,
   interval:100,
@@ -356,18 +331,21 @@ document.getElementById("BtnWhatsapp").addEventListener("click", function (e) {
   }, 300);
 });
 
-document.getElementById("emailBtn").addEventListener("click", function (e) {
+/* document.getElementById("emailBtn").addEventListener("click", function (e) {
   e.preventDefault();
 
   const user = "contact";
   const domain = "norbertinematanda.cd";
 
   window.location.href = "mailto:" + user + "@" + domain;
-});
+}); */
 
-/* document.addEventListener("contextmenu", e => {
-  e.preventDefault();
-});
+
+/* 
+// Blocage clic droit + sélection
+
+document.addEventListener("contextmenu", e => e.preventDefault());
+document.addEventListener("selectstart", e => e.preventDefault());
 
 // BLOQUER CERTAINES TOUCHES DEVELOPPEUR
 document.addEventListener("keydown", function (e) {
@@ -399,42 +377,86 @@ document.addEventListener("keydown", function (e) {
 
 });
 
+// Détection DevTools (version avancée)
 
 setInterval(() => {
 
+  const threshold = 160;
+
   const devtoolsOpen =
-    window.outerWidth - window.innerWidth > 160 ||
-    window.outerHeight - window.innerHeight > 160;
+    window.outerWidth - window.innerWidth > threshold ||
+    window.outerHeight - window.innerHeight > threshold;
 
   if (devtoolsOpen) {
-
     document.body.innerHTML = `
       <div style="
         height:100vh;
         display:flex;
+        flex-direction:column;
         justify-content:center;
         align-items:center;
-        background:#000;
+        background:linear-gradient(135deg,#000,#111);
         color:#fff;
-        font-size:30px;
         font-family:sans-serif;
+        text-align:center;
       ">
-        Inspection non autorisée
+        <h1>⚠ Accès non autorisé</h1>
+        <p>Veuillez fermer les outils de développement</p>
       </div>
     `;
-
   }
 
-}, 1000); */
+}, 1000);
+
+// Protection anti-debug (console trap)
+
+(function () {
+  const devtools = /./;
+  devtools.toString = function () {
+    throw "Inspection bloquée";
+  };
+
+  console.log("%c", devtools);
+})();
 
 
-/* setInterval(() => {
+// Détection comportementale (anti-bot simple)
 
-  const devtools =
-    window.outerWidth - window.innerWidth > 160;
+let mouseMoves = 0;
 
-  if (devtools) {
-    window.location.href = "about:blank";
+document.addEventListener("mousemove", () => {
+  mouseMoves++;
+});
+
+setTimeout(() => {
+  if (mouseMoves < 5) {
+    document.body.style.display = "none";
   }
+}, 3000);
 
-}, 1000); */
+// Protection anti-copie du site
+
+document.addEventListener("copy", e => e.preventDefault());
+document.addEventListener("cut", e => e.preventDefault());
+document.addEventListener("paste", e => e.preventDefault());
+
+// Protection mobile DevTools simple
+if (/Android|iPhone|iPad/i.test(navigator.userAgent)) {
+  document.addEventListener("contextmenu", e => e.preventDefault());
+}
+
+// Mode sécurité active (overlay invisible)
+
+const overlay = document.createElement("div");
+
+overlay.style.position = "fixed";
+overlay.style.top = "0";
+overlay.style.left = "0";
+overlay.style.width = "100%";
+overlay.style.height = "100%";
+overlay.style.zIndex = "999999";
+overlay.style.pointerEvents = "none";
+
+document.body.appendChild(overlay);
+
+*/

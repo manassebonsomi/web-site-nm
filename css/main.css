@@ -265,7 +265,7 @@ body::-webkit-scrollbar-thumb{
   gap:12px;
 }
 
-.logo-img{
+/* .logo-img{
   width:55px;
   height:55px;
   border-radius:50%;
@@ -274,6 +274,37 @@ body::-webkit-scrollbar-thumb{
   flex-shrink:0;
 
   animation:logoFloat 3s ease-in-out infinite;
+} */
+
+.logo-img{
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  overflow:hidden;
+  position:relative;
+  box-shadow:
+  0 0 15px rgba(255,204,0,.5),
+  0 0 30px rgba(0,51,153,.4);
+
+  animation:
+  logoFloat 3s ease-in-out infinite,
+  logoPulse 2s infinite;
+}
+
+@keyframes logoPulse{
+
+  0%,100%{
+    box-shadow:
+    0 0 15px rgba(255,204,0,.5),
+    0 0 30px rgba(0,51,153,.4);
+  }
+
+  50%{
+    box-shadow:
+    0 0 25px rgba(255,204,0,.8),
+    0 0 50px rgba(0,51,153,.7);
+  }
+
 }
 
 .logo-img img{

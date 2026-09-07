@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abonnés | Norbertine Matanda</title>
+
+
+<link rel="stylesheet" href="css/dashboard.css">
+<link rel="stylesheet" href="css/newsletter.css">
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet">
+
+
+</head>
+
+<body style="display:none;" id="adminBody">
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar" id="sidebar">
+
+<div class="sidebar-top">
+
+    <div class="logo-box">
+        <div class="logo-circle">
+            <i class="fa-solid fa-landmark"></i>
+        </div>
+
+        <div>
+            <h2>Norbertine</h2>
+            <span>Admin Panel</span>
+        </div>
+    </div>
+
+</div>
+
+<ul class="sidebar-menu">
+
+    <li>
+        <a href="dashboard.html">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Tableau de bord</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="actualites.html">
+            <i class="fa-solid fa-newspaper"></i>
+            <span>Actualités</span>
+        </a>
+    </li>
+
+    <li class="active">
+        <a href="newsletter.html">
+            <i class="fa-solid fa-envelope"></i>
+            <span>Newsletter</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="abonnes.html">
+            <i class="fa-solid fa-users"></i>
+            <span>Abonnés</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="utilisateurs.html">
+            <i class="fa-solid fa-user-shield"></i>
+            <span>Utilisateurs</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="messages.html">
+            <i class="fa-solid fa-message"></i>
+            <span>Messages</span>
+        </a>
+    </li>
+
+</ul>
+
+
+</aside>
+
+<!-- ================= MAIN ================= -->
+
+<div class="main-content">
+
+<!-- HEADER -->
+<header class="topbar">
+
+    <div class="left">
+
+        <button class="menu-btn" id="menuBtn">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <h1>📩 Newsletter</h1>
+
+    </div>
+
+    <div class="right">
+
+        <div class="notification">
+
+            <i class="fa-solid fa-bell"></i>
+            <span class="badge">5</span>
+
+        </div>
+
+        <div class="admin-profile">
+
+            <img src="#" alt="Admin">
+
+            <div>
+                <h4>Super Admin</h4>
+                <span>Administrateur</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- PAGE HEADER -->
+
+<section class="page-header">
+
+    <div>
+        <h2>Gestion Newsletter</h2>
+        <p>Créer et envoyer une newsletter à tous les abonnés.</p>
+    </div>
+
+</section>
+
+<!-- STATS -->
+
+<section class="newsletter-stats">
+
+    <div class="stat-box">
+        <h3>1450</h3>
+        <span>Abonnés</span>
+    </div>
+
+    <div class="stat-box">
+        <h3>58</h3>
+        <span>Newsletters envoyées</span>
+    </div>
+
+    <div class="stat-box">
+        <h3>92%</h3>
+        <span>Taux d'ouverture</span>
+    </div>
+
+    <div class="stat-box">
+        <h3>30 Mai</h3>
+        <span>Dernier envoi</span>
+    </div>
+
+</section>
+
+<!-- FORMULAIRE -->
+
+<section class="newsletter-card">
+
+    <div class="card-header">
+        <h3>Créer une Newsletter</h3>
+    </div>
+
+    <form id="newsletterForm">
+
+        <div class="form-group">
+            <label>Sujet</label>
+
+            <input
+                type="text"
+                id="subject"
+                placeholder="Titre de la newsletter"
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label>Catégorie</label>
+
+            <select id="category">
+
+                <option>Actualité</option>
+                <option>Politique</option>
+                <option>Social</option>
+                <option>Événement</option>
+
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Image</label>
+
+            <input
+                type="file"
+                id="image"
+                accept="image/*"
+            >
+        </div>
+
+        <div class="form-group">
+            <label>Contenu</label>
+
+            <textarea
+                id="message"
+                rows="10"
+                placeholder="Votre contenu..."
+            ></textarea>
+        </div>
+
+        <button
+            type="button"
+            id="previewBtn"
+            class="preview-btn">
+
+            <i class="fa-solid fa-eye"></i>
+            Aperçu
+
+        </button>
+
+        <button
+            type="submit"
+            class="send-btn">
+
+            <i class="fa-solid fa-paper-plane"></i>
+            Envoyer Newsletter
+
+        </button>
+
+    </form>
+
+</section>
+
+<!-- APERCU -->
+
+<section class="preview-card">
+
+    <div class="card-header">
+        <h3>Aperçu Email</h3>
+    </div>
+
+    <div id="newsletterPreview">
+
+        <p>
+            L'aperçu apparaîtra ici...
+        </p>
+
+    </div>
+
+</section>
+
+<!-- HISTORIQUE -->
+
+<section class="history-card">
+
+    <div class="card-header">
+        <h3>Historique</h3>
+    </div>
+
+    <div class="history-table-container">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Sujet</th>
+                    <th>Destinataires</th>
+                    <th>Statut</th>
+                </tr>
+            </thead>
+
+            <tbody id="historyTable"></tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+</div>
+
+
+<div class="progress-container" id="progressContainer">
+    <div class="progress-bar-news">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <p id="progressText">
+        Préparation...
+    </p>
+</div>
+
+<div class="alert-box" id="alertBox"></div>
+<script src="js/dashboard.js"></script>
+<script src="js/newsletter.js"></script>
+<script type="module" src="guard.js"></script>
+<script type="module" src="logout.js"></script>
+</body>
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualités | Norbertine Matanda</title>
+
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/actualites.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body style="display:none;" id="adminBody">
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-top">
+
+        <div class="logo-box">
+
+            <div class="logo-circle">
+                <i class="fa-solid fa-landmark"></i>
+            </div>
+
+            <div>
+                <h2>Norbertine</h2>
+                <span>Admin Panel</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <ul class="sidebar-menu">
+
+        <li>
+            <a href="dashboard.html">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Tableau de bord</span>
+            </a>
+        </li>
+
+        <li class="active">
+            <a href="actualites.html">
+                <i class="fa-solid fa-newspaper"></i>
+                <span>Actualités</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="newsletter.html">
+                <i class="fa-solid fa-envelope"></i>
+                <span>Newsletter</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="abonnes.html">
+                <i class="fa-solid fa-users"></i>
+                <span>Abonnés</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="utilisateurs.html">
+                <i class="fa-solid fa-user-shield"></i>
+                <span>Utilisateurs</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="messages.html">
+                <i class="fa-solid fa-message"></i>
+                <span>Messages</span>
+            </a>
+        </li>
+
+    </ul>
+
+</aside>
+
+<!-- MAIN -->
+
+<div class="main-content">
+
+    <!-- HEADER -->
+
+    <header class="topbar">
+
+        <div class="left">
+
+            <button class="menu-btn" id="menuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <h1>📰 Actualités</h1>
+
+        </div>
+
+        <div class="right">
+
+            <div class="notification">
+                <i class="fa-solid fa-bell"></i>
+                <span class="badge">5</span>
+            </div>
+
+            <div class="admin-profile">
+
+                <img src="#" alt="Admin Avatar">
+
+                <div>
+                    <h4>Super Admin</h4>
+                    <span>Administrateur</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- PAGE HEADER -->
+
+    <section class="page-header">
+
+        <div>
+            <h2>Gestion des Actualités</h2>
+            <p>
+                Publiez et gérez les actualités du site officiel.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- STATS -->
+
+    <section class="news-stats">
+
+        <div class="stat-box">
+            <h3>125</h3>
+            <span>Articles publiés</span>
+        </div>
+
+        <div class="stat-box">
+            <h3>12</h3>
+            <span>Ce mois</span>
+        </div>
+
+        <div class="stat-box">
+            <h3>3</h3>
+            <span>Aujourd'hui</span>
+        </div>
+
+        <div class="stat-box">
+            <h3>30 Mai</h3>
+            <span>Dernière publication</span>
+        </div>
+
+    </section>
+
+    <!-- FORMULAIRE -->
+
+    <section class="news-card">
+
+        <div class="card-header">
+            <h3>Nouvelle Actualité</h3>
+        </div>
+
+        <form id="newsForm">
+
+            <div class="form-group">
+
+                <label>Titre</label>
+
+                <input
+                    type="text"
+                    id="title"
+                    placeholder="Titre de l'actualité"
+                    required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Catégorie</label>
+
+                <select id="category">
+
+                    <option>Politique</option>
+                    <option>Social</option>
+                    <option>Événement</option>
+                    <option>Jeunesse</option>
+
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Image</label>
+
+                <input
+                    type="file"
+                    id="image"
+                    accept="image/*">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Contenu</label>
+
+                <textarea
+                    id="content"
+                    rows="12"
+                    placeholder="Contenu de l'actualité..."
+                    required></textarea>
+
+            </div>
+
+            <button
+                type="button"
+                id="previewBtn"
+                class="preview-btn">
+
+                <i class="fa-solid fa-eye"></i>
+                Aperçu
+
+            </button>
+
+            <button
+                type="submit"
+                class="publish-btn">
+
+                <i class="fa-solid fa-upload"></i>
+                Publier
+
+            </button>
+
+        </form>
+
+    </section>
+
+    <!-- APERCU -->
+
+    <section class="preview-card">
+
+        <div class="card-header">
+            <h3>Aperçu de l'article</h3>
+        </div>
+
+        <div id="newsPreview">
+
+            <p>
+                L'aperçu apparaîtra ici...
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- HISTORIQUE -->
+
+    <section class="history-card">
+
+        <div class="card-header">
+            <h3>Historique des publications</h3>
+        </div>
+        <div class="history-table-container">
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>Date</th>
+                    <th>Titre</th>
+                    <th>Catégorie</th>
+                    <th>Statut</th>
+                    <th>Actions</th>
+                </tr>
+
+            </thead>
+
+            <tbody id="historyTable">
+
+            </tbody>
+
+        </table>
+        </div>
+
+    </section>
+
+</div>
+
+<!-- PROGRESS -->
+
+<div class="progress-container" id="progressContainer">
+
+    <div class="progress-bar-news">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <p id="progressText">
+        Préparation...
+    </p>
+
+</div>
+
+<!-- ALERT -->
+
+<div class="alert-box" id="alertBox"></div>
+
+<script src="js/dashboard.js"></script>
+<script src="js/actualites.js"></script>
+<script type="module" src="guard.js"></script>
+<script type="module" src="logout.js"></script>
+
+</body>
+</html>

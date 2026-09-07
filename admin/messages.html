@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualités | Norbertine Matanda</title>
+
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/actualites.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body style="display:none;" id="adminBody">
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-top">
+
+        <div class="logo-box">
+
+            <div class="logo-circle">
+                <i class="fa-solid fa-landmark"></i>
+            </div>
+
+            <div>
+                <h2>Norbertine</h2>
+                <span>Admin Panel</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <ul class="sidebar-menu">
+
+        <li>
+            <a href="dashboard.html">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Tableau de bord</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="actualites.html">
+                <i class="fa-solid fa-newspaper"></i>
+                <span>Actualités</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="newsletter.html">
+                <i class="fa-solid fa-envelope"></i>
+                <span>Newsletter</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="abonnes.html">
+                <i class="fa-solid fa-users"></i>
+                <span>Abonnés</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="utilisateurs.html">
+                <i class="fa-solid fa-user-shield"></i>
+                <span>Utilisateurs</span>
+            </a>
+        </li>
+
+        <li class="active">
+            <a href="messages.html">
+                <i class="fa-solid fa-message"></i>
+                <span>Messages</span>
+            </a>
+        </li>
+
+    </ul>
+
+</aside>
+
+<!-- MAIN -->
+
+<div class="main-content">
+
+    <!-- HEADER -->
+
+    <header class="topbar">
+
+        <div class="left">
+
+            <button class="menu-btn" id="menuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <h1>Messages</h1>
+
+        </div>
+
+        <div class="right">
+
+            <div class="notification">
+                <i class="fa-solid fa-bell"></i>
+                <span class="badge">5</span>
+            </div>
+
+            <div class="admin-profile">
+
+                <img src="#" alt="Admin Avatar">
+
+                <div>
+                    <h4>Super Admin</h4>
+                    <span>Administrateur</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- PAGE HEADER -->
+
+    <section class="page-header">
+
+        <div>
+            <h2>Gestion des Messages</h2>
+            <p>
+                Gérez les messages reçus sur le site officiel.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- STATS -->
+
+    <section class="news-stats">
+
+        <div class="stat-box">
+            <h3>125</h3>
+            <span>Messages</span>
+        </div>
+
+        <div class="stat-box">
+            <h3>12</h3>
+            <span>Ce mois</span>
+        </div>
+
+        <div class="stat-box">
+            <h3>3</h3>
+            <span>Aujourd'hui</span>
+        </div>
+
+        <div class="stat-box">
+            <h3>30 Mai</h3>
+            <span>Dernier message</span>
+        </div>
+
+    </section>
+
+
+    <!-- HISTORIQUE -->
+
+    <section class="history-card">
+
+        <div class="card-header">
+            <h3>Historique des messages</h3>
+        </div>
+        <div class="history-table-container">
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Nom</th>
+                    <th>Email</th>
+                    <th>Sujet</th>
+                    <th>Message</th>
+                    <th>Statut</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody id="contactsTable"></tbody>
+
+            </tbody>
+
+        </table>
+        </div>
+
+    </section>
+
+</div>
+
+
+<!-- ALERT -->
+<div class="alert-box" id="alertBox"></div>
+
+<script src="js/dashboard.js"></script>
+<script src="js/messages.js"></script>
+<script type="module" src="guard.js"></script>
+<script type="module" src="logout.js"></script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abonnés | Norbertine Matanda</title>
+
+
+<link rel="stylesheet" href="css/dashboard.css">
+<link rel="stylesheet" href="css/abonnes.css">
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet">
+
+
+</head>
+
+<body style="display:none;" id="adminBody">
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar" id="sidebar">
+
+<div class="sidebar-top">
+
+    <div class="logo-box">
+        <div class="logo-circle">
+            <i class="fa-solid fa-landmark"></i>
+        </div>
+
+        <div>
+            <h2>Norbertine</h2>
+            <span>Admin Panel</span>
+        </div>
+    </div>
+
+</div>
+
+<ul class="sidebar-menu">
+
+    <li>
+        <a href="dashboard.html">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Tableau de bord</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="actualites.html">
+            <i class="fa-solid fa-newspaper"></i>
+            <span>Actualités</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="newsletter.html">
+            <i class="fa-solid fa-envelope"></i>
+            <span>Newsletter</span>
+        </a>
+    </li>
+
+    <li class="active">
+        <a href="abonnes.html">
+            <i class="fa-solid fa-users"></i>
+            <span>Abonnés</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="utilisateurs.html">
+            <i class="fa-solid fa-user-shield"></i>
+            <span>Utilisateurs</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="messages.html">
+            <i class="fa-solid fa-message"></i>
+            <span>Messages</span>
+        </a>
+    </li>
+</ul>
+
+
+</aside>
+
+<!-- ================= MAIN ================= -->
+
+<div class="main-content">
+
+
+<!-- HEADER -->
+
+<header class="topbar">
+
+    <div class="left">
+
+        <button class="menu-btn" id="menuBtn">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <h1>📩 Abonnés Newsletter</h1>
+
+    </div>
+
+    <div class="right">
+
+        <div class="notification">
+
+            <i class="fa-solid fa-bell"></i>
+            <span class="badge">5</span>
+
+        </div>
+
+        <div class="admin-profile">
+
+            <img src="images/admin.jpg" alt="Admin">
+
+            <div>
+                <h4>Super Admin</h4>
+                <span>Administrateur</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- PAGE HEADER -->
+<section class="page-header">
+
+    <div>
+        <h2>Gestion des abonnés</h2>
+        <p>Liste complète des abonnés à la newsletter.</p>
+    </div>
+
+    <button class="export-btn">
+        <i class="fa-solid fa-download"></i>
+        Exporter CSV
+    </button>
+
+</section>
+
+<!-- STATS -->
+
+<section class="subscriber-stats">
+
+    <div class="stat-box">
+        <h3 id="totalSubscribers">0</h3>
+        <span>Total abonnés</span>
+    </div>
+
+    <div class="stat-box">
+        <h3>35</h3>
+        <span>Aujourd'hui</span>
+    </div>
+
+    <div class="stat-box">
+        <h3>102</h3>
+        <span>Cette semaine</span>
+    </div>
+
+    <div class="stat-box">
+        <h3>380</h3>
+        <span>Ce mois</span>
+    </div>
+
+</section>
+
+<!-- TABLE CARD -->
+
+<section class="table-card">
+
+    <div class="table-header">
+
+        <input
+            type="text"
+            placeholder="Rechercher un email..."
+            class="search-input"
+        >
+
+        <input
+            type="date"
+            class="date-filter"
+        >
+
+    </div>
+
+    <div class="table-responsive">
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <!-- <th>ID</th> -->
+                    <th>Email</th>
+                    <th>Date abonnement</th>
+                    <!-- <th>Statut</th> -->
+                    <th>Actions</th>
+                </tr>
+
+            </thead>
+
+            <tbody id="data"></tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+
+
+</div>
+
+<script src="js/dashboard.js"></script>
+<script src="js/abonnes.js"></script>
+<script type="module" src="guard.js"></script>
+<script type="module" src="logout.js"></script>
+</body>
+</html>

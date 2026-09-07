@@ -31,3 +31,23 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 
 X-Frame-Options: DENY
+
+RewriteEngine On
+
+RewriteRule ^$ index.html [L]
+RewriteRule ^biographie/?$ biographie.html [L]
+RewriteRule ^realisations/?$ realisations.html [L]
+RewriteRule ^actualites/?$ actualites.html [L]
+RewriteRule ^galerie/?$ galerie.html [L]
+RewriteRule ^contact/?$ contact.html [L]
+
+
+Redirect 301 /biographie.html /biographie
+Redirect 301 /realisations.html /realisations
+Redirect 301 /actualites.html /actualites
+Redirect 301 /galerie.html /galerie
+Redirect 301 /contact.html /contact
+
+
+RewriteRule ^qui-est-norbertine-matanda/?$ biographie.html [L]
+RewriteRule ^galerie-photos/?$ galerie.html [L]

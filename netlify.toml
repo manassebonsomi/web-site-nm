@@ -1,0 +1,29 @@
+[[redirects]]
+from = "/biographie"
+to = "/biographie.html"
+status = 200
+
+[[redirects]]
+from = "/realisations"
+to = "/realisations.html"
+status = 200
+
+[[redirects]]
+from = "/actualites"
+to = "/actualites.html"
+status = 200
+
+[[redirects]]
+from = "/galerie"
+to = "/galerie.html"
+status = 200
+
+[[redirects]]
+from = "/contact"
+to = "/contact.html"
+status = 200
+
+[[redirects]]
+from = "/"
+to = "/index.html"
+status = 200

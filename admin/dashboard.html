@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin | Norbertine Matanda</title>
+
+
+<link rel="stylesheet" href="css/dashboard.css">
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet">
+
+
+</head>
+
+<body style="display:none;" id="adminBody">
+
+<aside class="sidebar" id="sidebar">
+
+<div class="sidebar-top">
+
+    <div class="logo-box">
+        <div class="logo-circle">
+            <i class="fa-solid fa-landmark"></i>
+        </div>
+
+        <div>
+            <h2>Norbertine</h2>
+            <span>Admin Panel</span>
+        </div>
+    </div>
+
+</div>
+
+<ul class="sidebar-menu">
+
+    <li class="active">
+        <a href="#">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Tableau de bord</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="actualites.html">
+            <i class="fa-solid fa-newspaper"></i>
+            <span>Actualités</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="newsletter.html">
+            <i class="fa-solid fa-envelope"></i>
+            <span>Newsletter</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="abonnes.html">
+            <i class="fa-solid fa-users"></i>
+            <span>Abonnés</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="utilisateurs.html">
+            <i class="fa-solid fa-user-shield"></i>
+            <span>Utilisateurs</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="messages.html">
+            <i class="fa-solid fa-message"></i>
+            <span>Messages</span>
+        </a>
+    </li>
+
+</ul>
+
+
+</aside>
+
+<!-- ================= MAIN ================= -->
+
+<div class="main-content">
+
+
+<!-- HEADER -->
+
+<header class="topbar">
+
+    <button id="logoutBtn">
+        <i class="fa-solid fa-right-from-bracket"></i>
+            Déconnexion
+    </button>
+
+    <div class="left">
+
+        <button class="menu-btn" id="menuBtn">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <h1>Tableau de bord</h1>
+
+    </div>
+
+    <div class="right">
+
+        <div class="notification">
+
+            <i class="fa-solid fa-bell"></i>
+            <span class="badge">5</span>
+
+        </div>
+
+        <div class="admin-profile">
+
+            <img src="images/admin.jpg" alt="Admin">
+
+            <div>
+                <h4>Super Admin</h4>
+                <span>Administrateur</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- WELCOME -->
+
+<section class="welcome-section">
+
+    <div class="welcome-card">
+
+        <div>
+
+            <h2>Bienvenue dans le panneau d'administration</h2>
+
+            <p>
+                Gérez les actualités, les abonnés, les newsletters
+                et les messages du site officiel de Norbertine Matanda.
+            </p>
+
+        </div>
+
+        <div class="welcome-icon">
+            <i class="fa-solid fa-chart-pie"></i>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- STATISTIQUES -->
+
+<section class="stats-grid">
+
+    <div class="stat-card">
+
+        <div class="icon blue">
+            <i class="fa-solid fa-newspaper"></i>
+        </div>
+
+        <div>
+            <h3 class="counter" data-target="25">0</h3>
+            <p>Actualités</p>
+        </div>
+
+    </div>
+
+    <div class="stat-card">
+
+        <div class="icon gold">
+            <i class="fa-solid fa-envelope"></i>
+        </div>
+
+        <div>
+            <h3 class="counter" data-target="1450">0</h3>
+            <p>Abonnés</p>
+        </div>
+
+    </div>
+
+    <div class="stat-card">
+
+        <div class="icon green">
+            <i class="fa-solid fa-message"></i>
+        </div>
+
+        <div>
+            <h3 class="counter" data-target="58">0</h3>
+            <p>Messages</p>
+        </div>
+
+    </div>
+
+    <div class="stat-card">
+
+        <div class="icon red">
+            <i class="fa-solid fa-user-shield"></i>
+        </div>
+
+        <div>
+            <h3 class="counter" data-target="4">0</h3>
+            <p>Administrateurs</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTENT GRID -->
+
+<section class="dashboard-grid">
+
+    <!-- ACTIVITES -->
+
+    <div class="card">
+
+        <div class="card-header">
+            <h3>Activités récentes</h3>
+        </div>
+
+        <div class="activity-list">
+
+            <div class="activity">
+                <i class="fa-solid fa-newspaper"></i>
+                <div>
+                    <h4>Nouvelle actualité publiée</h4>
+                    <span>Il y a 2 heures</span>
+                </div>
+            </div>
+
+            <div class="activity">
+                <i class="fa-solid fa-envelope"></i>
+                <div>
+                    <h4>Newsletter envoyée</h4>
+                    <span>Il y a 5 heures</span>
+                </div>
+            </div>
+
+            <div class="activity">
+                <i class="fa-solid fa-users"></i>
+                <div>
+                    <h4>12 nouveaux abonnés</h4>
+                    <span>Aujourd'hui</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- APERCU -->
+
+    <div class="card">
+
+        <div class="card-header">
+            <h3>Aperçu rapide</h3>
+        </div>
+
+        <div class="quick-actions">
+
+            <button>
+                <i class="fa-solid fa-plus"></i>
+                <a href="actualites.html">Ajouter Actualité</a>
+            </button>
+
+            <button>
+                <i class="fa-solid fa-paper-plane"></i>
+                <a href="newsletters.html">Envoyer Newsletter</a>
+            </button>
+
+            <button>
+                <i class="fa-solid fa-user-plus"></i>
+                <a href="utilisateurs.html">Ajouter Utilisateur</a>
+            </button>
+
+            <button>
+                <i class="fa-solid fa-envelope-open"></i>
+                <a href="messages.html">Voir Messages</a>
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</div>
+
+<script src="js/dashboard.js"></script>
+<script type="module" src="guard.js"></script>
+<script type="module" src="logout.js"></script>
+</body>
+</html>
