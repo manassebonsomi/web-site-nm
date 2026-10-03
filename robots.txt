@@ -2,4 +2,4 @@ User-agent: *
 
 Allow: /
 
-Sitemap: https://norbertinematanda.cd/sitemap.xml
+Sitemap: https://norbertinematanda.com/sitemap.xml
